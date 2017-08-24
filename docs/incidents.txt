@@ -1,0 +1,653 @@
+https://community.mcafee.com/community/business/email_web/webgateway/blog/2011/05/18/have-you-ever-wondered-what-incidents-inside-mwg-are
+
+(bad copy and paste from useful blog entry)
+
+Incident.AffectedHost
+With the introduction of the Alerts in MWG 7.1, we have introduced a product wide incident reporting and management system. Sounds a little scientific, but is a great benefit for the product. This allow you to build detailed alerting around MWG to receive emails and Traps, write special logs in case something goes wrong on MWG. Incidents are part of the rule engines properties and consist of:
+ 
+Incident.AffectedHost
+Incident.Description
+Incident.ID
+Incident.Origin
+Incident.OriginName
+Incident.Severity
+ 
+Below, you have the description of the Properties
+ 
+Description of the Incident Fields
+ 
+Each of the following fields is put into a property and can be requested in the Log Handler.
+ 
+IncidentID
+ 
+The ID of the incident (unique).
+Incidents:
+From mwg-logmanager (origin 5) 
+501 LogFilePushFailed
+From System (origin 1) 
+5 Monitor incident
+Reason
+ 
+A string describing the reason (no special format).
+ 
+OriginID
+ 
+The ID of the origin (unique).
+Origins:
+1 System
+2 mwg-core
+3 mwg-coordinator
+4 mwg-antimalware
+5 mwg-logmanager
+6 sysconf daemon
+7 mwg-ui
+9 reserved for unidentified origins
+OriginName
+ 
+The name of the origin (should be something the admin knows from the UI, for example "Log File Manager" and not mwg-logmanager)
+ 
+AffectedHost
+ 
+A IP address describing the host that is affected
+Examples:
+a machine that downloads a lot of viruses
+the fpt server that refuses the login credentials
+any other machine that should be mentioned by the event
+Severity
+ 
+The severity of the event.
+(Syslog severities)
+0 Emergency
+1 Alert
+2 Critical
+3 Error
+4 Warning
+5 Notice
+6 Informational
+7 Debug
+ 
+The biggest one is the collection of properties inside the product, as they span across all diferent product areas:
+ 
+IncidentID
+Description
+When Fired
+Reason
+OriginID
+OriginName
+Severity
+System
+1-199
+5
+Monitor incident for cyclic execution of incident rules
+
+Monitor Incident
+1
+system
+7
+20
+RAID
+mwg-monitor checks RAID and RAID reports critical and/or failed disks
+RAID reports N critical disks and N failed disks.
+1
+health monitor
+4 (3 if "failed disks")
+21
+S.M.A.R.T.
+mwg-monitor calls smartctl -H and finds an error
+S.M.A.R.T. health check reported an error on hard disk HDD.
+1
+health monitor
+4
+22
+Filesystem usage
+mwg-monitor detected a filesystem usage beyond a certain threshold
+Filesystem usage on PART exceeds selected limit.
+1
+health monitor
+4
+23
+Memory usage
+mwg-monitor detected a dirty-pages to total mem ratio beyond a certain limit
+Memory usage ratio of N processes exceed selected limit.
+1
+health monitor
+4
+24
+Load
+mwg-monitor detected a load beyond a certain limit
+5 minute load average exceeds selected limit.
+1
+health monitor
+4
+Core
+200-299
+! MWG-7.1.5: 211
+Proxy attempts to store too many values in TopN report
+More than 20000 entries
+Maximimum number of entries reached for dashboard report <name>
+2
+Statistic
+4
+298
+Update of product x succeeded on local core (obsolete)
+Update succeeded for product x on local core
+Info about product x
+2
+Core
+6
+299
+Update of product x failed on local core (obsolete)
+Info about product x
+Update failed for product x on local core
+2
+Core
+3
+200
+Check for license expiration
+
+The license expire date has been checked
+2
+Core
+6
+201
+Started
+Started in FIPS 140-2 mode
+The Webgateway has successfully passed all FIPS 140-2 selftests
+2
+Core
+6
+Proxy
+700-799
+700
+Overload
+Entered overload state
+Connection limit of {0_connections} simultaneous connections has been exceeded. Delaying accepts
+2
+Proxy
+2
+701
+Overload
+MWG is in overload state longer > 30 sec (after sending the last incident)
+Overload: The Webgateway is still overloaded and delays accepts
+2
+Proxy
+2
+702
+Overload
+Left overload state
+Overload: Left overload handling. Accepts will be done immediately again
+2
+Proxy
+4
+703
+Highload
+Entered high load
+Highload: {0_percent}% of the limit for simultaneous connections ({1_connections}) has been exceeded
+2
+Proxy
+4
+704
+Highload
+MWG has still a lot of connections for longer > 30 sec (after sending the last incident)
+Highload: The Webgateway still serves more than {0_percent}% of the maximum connection number ({1_connections})
+2
+Proxy
+4
+705
+Highload
+Connection number below 85% of max value
+Number of connections droped below {0_percent}% of the maximum value ({1_connections})
+2
+Proxy
+6
+710
+Next Hop Proxy
+Next Hop will be marked as down and not use for x seconds
+Next hop proxy {0_dnsname} has been marked as down for {1_seconds} seconds
+2
+Proxy
+4
+711
+Next Hop Proxy
+Failure to connect to next hop proxy
+Connection to next hop proxy {0_dnsname} failed
+2
+Proxy
+4
+712
+Next Hop Proxy
+Next hop proxy will be moved from error state back to normal operation
+The next hop proxy {0_dnsname} will be used again
+2
+Proxy
+6
+720
+Listener
+Can't open listener
+The listener on {0_ipandport} could not be started
+2
+Proxy
+2
+730
+Reboot required after configuration change
+mfend driver in inconsistent state after changing proxy mode
+Proxy mode changes require the appliance to be rebooted.
+6
+Proxy
+2
+Antivirus
+800-899
+850
+Update Success
+If AV filter update was successful.
+Anti-Malware filter update was successful. New version identifier is '{0_identifier}'.
+2
+Anti-Malware Filter
+6
+851
+Update Failed
+If AV filter update failed.
+Anti-Malware filter update failed. Broken version identifier is '{0_identifier}'.
+2
+Anti-Malware Filter
+3
+852
+Download Failed
+When the download or the verification of the Anti-Malware Filter update files failed.
+Download or verification of Anti-Malware Filter update files failed.
+2
+Anti-Malware Filter
+3
+853
+Up to date
+When Anti-Malware Filter is up to date.
+Anti-Malware Filter is up to date.
+2
+URL Filter
+6
+Authentication
+900-999
+901
+NTLM server connection
+Account update
+Connected to {nn} server(s) in domain {domain name}.
+2
+NTLM Auth-Filter
+6
+902
+NTLM server connection
+Account update
+Can't connect to {nn} server(s) in domain {domain name}.
+2
+NTLM Auth-Filter
+4
+903
+NTLM server connection
+Account update
+The following domain(s) can't be contacted: {domain names}.
+2
+NTLM Auth-Filter
+3
+910
+LDAP server connection
+Connect to LDAP Server
+Connected to LDAP server (Configuration ID {nn}).
+2
+LDAP Auth-Filter
+6
+912
+LDAP server connection
+Disconnect from LDAP Server
+Disconnected from LDAP server (Configuration ID {nn}).
+2
+LDAP Auth-Filter
+4
+913
+LDAP server connection
+Connect to LDAP Server
+Can't connect to any LDAP server (Configuration ID {nn}).
+2
+LDAP Auth-Filter
+3
+920
+RADIUS server connection
+Radius server responds
+Authentication request sent to the RADIUS server '{server name}' has been responded.
+2
+RADIUS Auth-Filter
+6
+921
+RADIUS server connection
+Radius server responding again
+Authentication request sent to the RADIUS server '{server name}' has been responded again.
+2
+RADIUS Auth-Filter
+6
+923
+RADIUS server connection
+Request timed out
+Authentication request sent to the RADIUS server '{server name}' has timed out.
+2
+RADIUS Auth-Filter
+3
+931
+NTLM-Agent server connection
+Reconnect to Server
+Connected to NTLM-Agent '{server name}'.
+2
+NTLM-Agent Auth-Filter
+6
+932
+NTLM-Agent server connection
+Disconnect fromServer
+Disconnected from NTLM-Agent '{server name}'.
+2
+NTLM-Agent Auth-Filter
+3
+933
+NTLM-Agent server connection
+Connect to Server
+Can't connect to NTLM-Agent '{server name}'.
+2
+NTLM-Agent Auth-Filter
+3
+940 (MWG 7.1.5)
+CRL Update Success
+If a CRL was downloaded and could be loaded
+{0_number} CRLs for the authentication filter have been updated
+2
+Authentication Filter
+6
+941 (MWG 7.1.5)
+CRL Update Failed
+If a downloaded CRL could not be loaded
+{0_number} of the recently updated CRLs for the authentication filter can not be loaded
+2
+Authentication Filter
+4
+942 (MWG 7.1.5)
+CRL Download Failed
+????
+?????
+2
+Authentication Filter
+?
+943 (MWG 7.1.5)
+CRLs are Up to date
+If no CRL needs to be updated
+All CRLs used for the authentication filter are up to date
+2
+Authentication Filter
+6
+URL
+1000-1099
+1050
+Update Success
+When the URL Filter update was successful.
+URL Filter update was successful. New version identifier is '{0_identifier}'.
+2
+URL Filter
+6
+1051
+Update Failed
+When the URL Filter update failed.
+URL Filter update failed. Broken version identifier is '{0_identifier}'.
+2
+URL Filter
+3
+1052
+Download Failed
+When the download or the verification of the URL Filter update files failed.
+Download or verification of URL Filter update files failed.
+2
+URL Filter
+3
+1053
+Up to date
+When URL Filter is up to date.
+URL Filter is up to date.
+2
+URL Filter
+6
+Quota + BucketMaps
+1100-1199
+Certificate Filter
+1200-1299
+ICAP Client Filter
+1300-1399
+MediaType
+1400-1499
+Openers
+1500-1599
+Certificate Chain Filter
+1600-1699
+1650
+Update Success
+If a CRL was donwnloaded and could be loaded
+{0_number} CRLs for the certificate chain filter have been updated
+2
+Certificate Chain Filter
+6
+1651
+Update Failed
+If a downloaded CRL could not be loaded
+{0_number} of the recently updated CRLs for the certificate chain filter can not be loaded
+2
+Certificate Chain Filter
+4
+1652
+Download Failed
+
+
+2
+Certificate Chain Filter
+?
+1653
+Up to date
+If no CRL needs to be updated
+All CRLs used for the certificate chain filter are up to date
+2
+Certificate Chain Filter
+6
+mwg-ui
+1700-1799
+1700
+login successful
+if user login was successful
+login and user client informations
+6
+mwg-ui
+4
+1701
+login blocked
+if user login failed
+login and user client informations
+7
+mwg-ui
+4
+1702
+ip changed
+users ip changed to another value
+login and user client informations
+7
+mwg-ui
+4
+1710
+saving successful
+user saved changed successfully
+name of user
+7
+mwg-ui
+6
+1711
+saving failed
+saving changes failed
+name of user
+7
+mwg-ui
+3
+                                                                                                                                                                                                                             
+[Enter your subsystem here
+[XXXX-YYYY]
+Coordinator / Updater
+300-399
+301
+Disk space less than 1 GB, stopped update process on nodex
+Not enough disk space to download update files
+Description why update stopped
+3
+Updater
+3
+302
+Download of product x failed for node y
+Download failed for product from update server
+Info about the product x that should be downloaded for a node y
+3
+Updater
+3
+303
+Update for product x failed on node y (obsolete)
+Updater reports, that an update was not successful on node y
+Info about the product,node and update status
+3
+Updater
+3
+304
+Product x for node y is up to date
+Update server reports the updater, that product x is up to date
+Version of product x from node equals version on update server
+3
+Updater
+3
+305
+Connect to Server failed
+Updater cannot connect to server
+Reports connection error code
+3
+Updater
+3
+321
+Download of product x succeeded for node y (obsolete)
+Download succeeded for product x
+Info about product x and node y
+3
+Updater
+6
+322
+Update of product x succeeded on node y (obsolete)
+Info about produxt x and node y
+Updater reports, that an update was successful on node y
+3
+Updater
+6
+anti-malware
+400-499
+mwg-logmanager
+500-599
+501
+Log manager push failed
+The server that did not provide the requested service. (e.g. the FTP server, or the proxy)
+Description why the log file push failed.
+5
+Log File Manager
+3
+sysconfd
+600-699
+600
+Reboot required after yum update
+
+Update contained packages which require the appliance to be rebooted to take effect!
+6
+mwg-update
+4
+666
+FIPS Self Check
+
+FIPS Self Check failed. Node is running in non-compliant FIPS mode
+1
+FIPS
+0
+Coordinator / Centralized Management
+3000-3200
+3000
+Synchronization
+At least one node is detected to be out of sync (regarding storage / configuration) and the number of out-of-sync nodes changes, triggered only on the root node
+how many and which nodes
+3
+Centralized Management
+3
+3001
+Synchronization
+All nodes are synchronized again (storage / configuration), 3000 was triggered before
+
+3
+Centralized Management
+6
+3005
+Synchronization
+At least one node did not respond propperly when shared data is send out and the number of out-of-sync nodes changes, triggered only on the root node, triggered only if the shared data should go to all nmodes in shared date group (in opposite to a specific node) because only then a decision can be made if the count of error nodes changes
+how many and which nodes
+3
+Centralized Management
+3
+3006
+Synchronization
+All nodes did accept shared data again, 3005 was triggered before, triggered only if the shared data should go to all nmodes in shared date group (in opposite to a specific node) because only then a decision can be made if the count of error nodes changes
+
+3
+Centralized Management
+
+ 
+ 
+ 
+ 
+ 
+ 
+As these are available via properties, you can use the in the error handler, to create several helpful alters in conjunction with the product's syslog, snmp and email capabilties. Good examples are already part of the predefined error handler:
+ 
+ 
+ 
+ 
+                                                                 
+                Error Handlers              
+                                                                                                                                     
+Log File Manager Incidents
+Enabled
+Applies to Requests: True / Responses: True / Embedded Objects: True
+1:     Incident.ID greater than or equals 501
+2:     AND Incident.ID less than or equals 600
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+Enabled
+Rule
+Action
+Events
+Comments
+Enabled	Create Notification Message
+1:     Incident.ID equals 501
+Continue	Set User-Defined.notificationMessage =   "A log file cannot be pushed. Please have a look at the mwg-logfilemanager errors log (/opt/mwg/log/mwg-errors/mwg-logmanager.errors.log)."
+                   
+Disabled	Send SNMP Trap
+1:     Incident.ID equals 501
+Continue	Set SNMP.Trap.Additional =   User-Defined.notificationMessage
+SNMP.Trap.Send.User(Incident.ID,"Log file pushing failed")
+                   
+Disabled	Create Syslog Entry
+1:     Incident.ID equals 501
+Continue	Syslog(Incident.ID,User-Defined.notificationMessage)
+                   
+Disabled	Send Email for Notification
+1:     Incident.ID equals 501
+Continue	Email.Send("enter valid email","Message from McAfee Web Gateway",User-Defined.notificationMessage)<Default>
+                   
+Disabled	Write Log File Manager Incidents Into Log
+1:     Incident.ID equals 501
+Continue	FileSystemLogging.WriteLogEntry(User-Defined.notificationMessage)<Log File Manager Incident Log>
+                   
+             
+         
+       
+ 
+ 
+ 
+best,
+Michael

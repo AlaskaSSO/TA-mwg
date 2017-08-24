@@ -1,0 +1,57 @@
+blockID,action,blockIDdescription
+0,allowed,Allowed
+1,unknown,Internal error
+2,blocked,Default message template used for an action
+3,unknown,Internal URL filter error
+4,unknown,unknown
+5,unknown,unknown
+6,unknown,unknown
+7,unknown,unknown
+8,blocked,blocked
+9,blocked,blocked
+10,blocked,Blocked due to an entry in the URL filter database
+11,unknown,unknown
+12,unknown,unknown
+13,unknown,unknown
+14,blocked,Blocked according to URL filtering by expression
+15,blocked,Blocked by the Real-Time Classifier
+18,blocked,blocked
+20,blocked,Blocked due to lack of content type
+21,unknown,unknown
+22,blocked,Blocked due to the media type
+23,blocked,Blocked streaming media
+30,blocked,Blocked due to a multi-part archive having been found
+35,blocked,Blocked due to an archive not handled by the Archive Handler
+80,blocked,Blocked due to a virus having been found
+81,blocked,Blocked due to unauthorized access
+82,blocked,Blocked due to a bad request
+85,blocked,Blocked due to an internal anti-malware error
+92,blocked,Blocked due to expiration of a certificate
+93,blocked,Blocked due to a revoked certificate
+94,blocked,Blocked due to a forbidden certificate authority (CA)
+95,blocked,Blocked due to an unknown certificate authority (CA)
+97,blocked,Blocked due to a self-signed certificate
+98,blocked,Blocked due to a common name mismatch
+102,blocked,Blocked due to an unspecified certificate incident
+103,blocked,Blocked due to CONNECT not allowed
+104,blocked,Blocked due to the reverse proxy destination not being allowed
+140,blocked,Blocked due to an internal DLP filter error
+150,blocked,Blocked due to an internal Application Control filter error
+151,blocked,Blocked due to a request belonging to an application that is not allowed
+160,blocked,Blocked due to missing policy for Web Hybrid
+161,blocked,Blocked due to web access not being allowed by Web Hybrid
+162,blocked,Blocked due to URL filtering by Web Hybrid
+200,blocked,Blocked due to the coaching session of a user having been exceeded
+201,blocked,Blocked due to the time quota session of a user having been exceeded
+202,blocked,Blocked due to the time quota for a user having been exceeded
+203,blocked,Blocked due to the volume quota session of a user having been exceeded
+204,blocked,Blocked due to the volume quota for a user having been exceeded
+205,blocked,Blocked due to the authorized override session of a user having been exceeded
+206,blocked,Blocked due to the blocking session of a user being active
+300,blocked,Blocked due to a quota redirect
+301,blocked,Blocked due to an authentication redirect
+400,blocked,Blocked due to an authorized override redirect
+997,allowed,Uncategorized message
+998,allowed,'1 minute MWG status message'
+999,blocked,to be implemented
+*,blocked,'unknown see mwg_action_info.csv and submit bugreport'

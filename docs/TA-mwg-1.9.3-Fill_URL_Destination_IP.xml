@@ -1,0 +1,34 @@
+<libraryContent>
+  <libraryObject>
+    <name>Fill URL.Destination.IP</name>
+    <version>7.6.2.12.0-23470</version>
+    <description></description>
+  </libraryObject>
+  <ruleGroup id="6223" defaultRights="2" name="Fill URL.Destination.IP" enabled="true" cycleRequest="true" cycleResponse="true" cycleEmbeddedObject="true" cloudSynced="false">
+    <acElements/>
+    <condition always="true">
+      <expressions/>
+    </condition>
+    <description></description>
+    <rules>
+      <rule id="6233" enabled="true" name="Fill URL.Destination.IP">
+        <description></description>
+        <immediateActionContainers/>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.equals">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.destination.ip"/>
+              <parameter valueTyp="3" typeId="com.scur.type.ip">
+                <value>
+                  <stringValue value="1.1.1.1" stringModifier="false" typeId="com.scur.type.ip"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+    </rules>
+    <ruleGroups/>
+  </ruleGroup>
+</libraryContent>

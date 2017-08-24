@@ -1,0 +1,10 @@
+Incident_Severity,severity,type
+0,critical,alarm
+1,critical,alarm
+2,high,alert
+3,medium,event
+4,medium,event
+5,low,task
+6,informational,task
+7,informational,task
+8,informational,web_log_event

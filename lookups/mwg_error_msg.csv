@@ -1,0 +1,80 @@
+err_id,err_msg
+5,Monitor incident for cyclic execution of incident rules
+20,RAID reports N critical disks and N failed disks.
+21,mwg-monitor calls smartctl -H and finds an error
+22,mwg-monitor detected a filesystem usage beyond a certain threshold
+23,mwg-monitor detected a dirty-pages to total mem ratio beyond a certain limit
+24,mwg-monitor detected a load beyond a certain limit
+200,(200) Incident.ID 200 License Warning
+211,(211) Incident.ID 211 Proxy attempts to store too many values in TopN report
+298,(298) Incident.ID 298 Update of product x succeeded on local core (obsolete)
+299,(299) Incident.ID 299 Update of product x failed on local core (obsolete)
+301,(301) Incident.ID 301 Updater Error
+302,(302) Incident.ID 302 Updater Error
+305,(305) Incident.ID 305 Updater Error
+501,(501) Incident.ID 501 Log File Cannot be pushed 
+600,(600) Incident.ID 600 Log File Manager
+700,(700) Incident.ID 700 Overload Connection limit of {0_connections} simultaneous connections has been exceeded. Delaying accepts
+701,(701) Incident.ID 701 Overload MWG is in overload state longer > 30 sec (after sending the last incident)
+702,(702) Incident.ID 702 Overload Left overload handling. Accepts will be done immediately again
+703,(703) Incident.ID 703 Highload Entered high load
+704,(704) Incident.ID 704 Highload MWG has still a lot of connections for longer > 30 sec (after sending the last incident)
+705,(705) Incident.ID 705 Highload Connection number below 85% of max value
+710,(710) Incident.ID 710 Next Hop will be marked as down and not use for x seconds
+711,(711) Incident.ID 711 Failure to connect to next hop proxy
+712,(712) Incident.ID 712 Next hop proxy will be moved from error state back to normal operation
+720,(720) Incident.ID 720 Can't open listener
+730,(730) Incident.ID 730 Reboot required after configuration change
+800,(800) Incident.ID 800 Antivirus 800-899
+850,(850) Incident.ID 850 Antivirus Update Success
+851,(851) Incident.ID 851 Antivirus Update Failed
+852,(852) Incident.ID 852 Antivirus Download Failed
+853,(853) Incident.ID 853 Antivirus Up to date
+900,(900) Incident.ID 900 Authentication 900-999
+901,(901) Incident.ID 901 NTLM server connection Account update Connected to {nn} server(s) in domain {domain name}.
+902,(902) Incident.ID 902 NTLM server connection Account update Can't connect to {nn} server(s) in domain {domain name}.
+903,(903) Incident.ID 903 NTLM server connection Account update The following domain(s) can't be contacted: {domain names}.
+941,(941) Incident.ID 941 Updater Error
+1051,(1051) Incident.ID 1051 Updater Error
+1651,(1651) Incident.ID 1651 Updater Error
+1700,(1700) Incident.ID 1700 mwg-ui login successful
+10063,(10063) Mail Bomb Warning
+14000,(14000) EngineError: Anti-Malware Engine (Cannot Load)
+14001,(14001) EngineError: Anti-Malware Engine (Overloaded)
+14002,(14002) EngineError: Anti-Malware Engine (Internal Error)
+14010,(14010) ATD Appliance Fails
+14011,(14011) ATD Scan Take Too Long
+14012,(14012) ATD Cannot Analyze File
+14013,(14013) ATD Fails to pull report
+15000,(15000) EngineError: URL Filter (Cannot Load)
+15001,(15001) EngineError: URL Filter (Internal Error)
+15002,(15002) EngineError: URL Filter (Cannot Load)
+15003,(15003) EngineError: URL Filter (Internal Error)
+15004,(15004) EngineError: URL Filter (Cannot Load)
+15005,(15005) EngineError: URL Filter (Cannot Load)
+15006,(15006) EngineError: URL Filter (Internal Error)
+15999,(15999) EngineError: URL Filter (Internal Error)
+20000,(20000) Check for long running connections.
+20001,(20001) Long Running Connections (Based on Volume)
+25000,(25000) External Lists: Filter Error
+25001,(25001) External Lists: Data Fetch Error
+25002,(25002) External Lists: Data Conversion Error
+25003,(25003) External Lists: Too Much Data Was Fetched
+25004,(25004) External Lists: Data Fetch Timeout
+25005,(25005) External Lists: Data Access Denied
+25006,(25006) External Lists: No Such Data Resource
+25007,(25007) External Lists: Filter Error
+25998,(25998) External Lists: Filter Error
+25999,(25999) External Lists: Filter Error
+26000,(26000) DLP Error
+26001,(26001) DLP Engine Is Not Loaded
+26002,(26002) DLP Error
+26999,(26999) DLP Error
+27000,(27000) Application Control Filter Error
+27001,(27001) Application Control Engine Not Loaded
+27002,(27002) Application Control (Internal Error)
+27999,(27999) Application Control (Internal Error)
+34000,(34000) SSO Error
+34001,(34001) SSO Error (Block Unknown Services)
+34999,(34999) SSO Error
+*,(0) Unknown see mwg_error_msg.csv and email bugreport with logentry

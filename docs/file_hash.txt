@@ -1,0 +1,14 @@
+In order to file_hash to show up properly you MUST add the file_hash to your custom defined attribute
+
+In your Gateway Antimalware with TIE rule make sure you have a rule as follows:
+
+set file_hash
+set event:
+Set User-Defined.Antimalware.SHA1 = Antimalware.MATD.Hash<Gateway Anti-Malware with Tie>
+
+Additionally in your "Block If Virus was Found" rule
+add event:
+Set User-Defined.Antimalware.SHA1 = Body.HashSHA1
+Set User-Defined.Antimalware.MD5 = Body.Hash("md5")
+
+the XML files assume that the userdefined Antimalware.SHA1 rule is set with values

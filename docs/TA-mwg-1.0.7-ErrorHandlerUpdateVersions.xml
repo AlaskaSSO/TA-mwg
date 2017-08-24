@@ -1,0 +1,1239 @@
+<libraryContent>
+  <libraryObject>
+    <name>TA-MWG-ErrorHandler-UpdateVersions</name>
+    <version>7.6.2.9.0-23104</version>
+    <description></description>
+  </libraryObject>
+  <configurations>
+    <configuration version="1.0.7" mwg-version="7.6.2.9.0-23104" id="19973" defaultRights="2" templateId="com.scur.template.engine.bucketmap" name="Version:Info" targetId="com.scur.engine.bucketmap">
+      <acElements/>
+      <configurationProperties>
+        <configurationProperty key="timeoutmin" type="com.scur.type.number" encrypted="false" value="0"/>
+        <configurationProperty key="timeouthours" type="com.scur.type.number" encrypted="false" value="0"/>
+        <configurationProperty key="timeoutdays" type="com.scur.type.number" encrypted="false" value="1"/>
+      </configurationProperties>
+      <description></description>
+    </configuration>
+  </configurations>
+  <userDefinedPropertys>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:AM-DAT" id="19979" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:AM-Engine" id="19975" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:DLP-Ruleset" id="20077" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:Avira-VDF" id="19980" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:AppPrism-DB" id="19977" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:MFE-DAT" id="19974" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:Avira-Savapi" id="19976" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:DLP-Engine" id="20047" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:TS-Database" id="19978" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:TS-Engine" id="19983" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:Avira-Engine" id="19981" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.Version:MFE-Engine" id="19982" scope="0" description="" defaultRights="2">
+      <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+    </userDefinedProperty>
+  </userDefinedPropertys>
+  <ruleGroup id="19985" defaultRights="2" name="TA-MWG-ErrorHandler-UpdateVersions" enabled="true" cycleRequest="true" cycleResponse="true" cycleEmbeddedObject="true" cloudSynced="false">
+    <acElements/>
+    <condition always="false">
+      <expressions>
+        <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.equals">
+          <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventoriginname"/>
+          <parameter valueTyp="3" typeId="com.scur.type.string">
+            <value>
+              <stringValue value="Updater" stringModifier="true" typeId="com.scur.type.string"/>
+            </value>
+          </parameter>
+        </conditionExpression>
+      </expressions>
+    </condition>
+    <description></description>
+    <rules>
+      <rule id="19998" enabled="true" name="Version:AM-DAT">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19979">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)AM-DAT=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="AM-DAT." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19979"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*AM-DAT=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="19986" enabled="true" name="Version:AM-Engine">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19975">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)AM-Engine=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="AM-Engine." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19975"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*AM-Engine=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="19992" enabled="true" name="Version:AppPrism-DB">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19977">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)AppPrism-DB=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="AppPrism-DB." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19977"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*AppPrism-DB=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20004" enabled="true" name="Version:Avira-Engine">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19981">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)Avira-Engine=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="Avira-Engine." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19981"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*Avira-Engine=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20010" enabled="true" name="Version:Avira-Savapi">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19976">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)Avira-Savapi=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="Avira-Savapi." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19976"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*Avira-Savapi=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20016" enabled="true" name="Version:Avira-VDF">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19980">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)Avira-VDF=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="Avira-VDF." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19980"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*Avira-VDF=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20053" enabled="true" name="Version:DLP-Engine">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="20047">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)DLP-Engine=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="DLP-Engine." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="20047"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*DLP-Engine=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20089" enabled="true" name="Version:DLP-Ruleset">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="20077">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)DLP-Ruleset=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="DLP-Ruleset." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="20077"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*DLP-Ruleset=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20022" enabled="true" name="Version:MFE-DAT">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19974">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)MFE-DAT=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="MFE-DAT." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19974"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*MFE-DAT=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20028" enabled="true" name="Version:MFE-Engine">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19982">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)MFE-Engine=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="MFE-Engine." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19982"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*MFE-Engine=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20034" enabled="true" name="Version:TS-Database">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19978">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)TS-Database=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="TS-Database." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19978"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*TS-Database=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+      <rule id="20040" enabled="true" name="Version:TS-Engine">
+        <description></description>
+        <immediateActionContainers>
+          <setActionContainer propertyId="19983">
+            <expressions>
+              <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceallmatches">
+                      <parameters>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.source</string>
+                          <parameter valueTyp="2">
+                            <value>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.search</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="regex((.*)TS-Engine=(\S+)(.*))" stringModifier="false" typeId="com.scur.type.regex"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                        <entry>
+                          <string>com.scur.engine.stringfilter.string.replaceallmatches.replace</string>
+                          <parameter valueTyp="3">
+                            <value>
+                              <stringValue value="\2" stringModifier="true" typeId="com.scur.type.string"/>
+                            </value>
+                          </parameter>
+                        </entry>
+                      </parameters>
+                    </propertyInstance>
+                  </value>
+                </parameter>
+              </setExpression>
+            </expressions>
+          </setActionContainer>
+          <executeActionContainer configurationId="19973">
+            <procedureValue procedureId="com.scur.engine.bucketmap.addglobalvarstring">
+              <parameters>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.key</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.concat">
+                        <parameters>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param1</string>
+                            <parameter valueTyp="3">
+                              <value>
+                                <stringValue value="TS-Engine." stringModifier="true" typeId="com.scur.type.string"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                          <entry>
+                            <string>com.scur.engine.stringfilter.string.concat.param2</string>
+                            <parameter valueTyp="2">
+                              <value>
+                                <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.uuid"/>
+                              </value>
+                            </parameter>
+                          </entry>
+                        </parameters>
+                      </propertyInstance>
+                    </value>
+                  </parameter>
+                </entry>
+                <entry>
+                  <string>com.scur.engine.bucketmap.addglobalvarstring.value</string>
+                  <parameter valueTyp="2">
+                    <value>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="19983"/>
+                    </value>
+                  </parameter>
+                </entry>
+              </parameters>
+            </procedureValue>
+          </executeActionContainer>
+        </immediateActionContainers>
+        <actionContainer actionId="com.scur.mainaction.continue"/>
+        <condition always="false">
+          <expressions>
+            <conditionExpression openingBracketCount="0" closingBracketCount="0" operatorId="com.scur.operator.matches">
+              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trap.eventreason"/>
+              <parameter valueTyp="3" typeId="com.scur.type.regex">
+                <value>
+                  <stringValue value="*TS-Engine=*" stringModifier="false" typeId="com.scur.type.regex"/>
+                </value>
+              </parameter>
+            </conditionExpression>
+          </expressions>
+        </condition>
+      </rule>
+    </rules>
+    <ruleGroups/>
+  </ruleGroup>
+</libraryContent>

@@ -1,28 +1,17 @@
-# TA-httpry
-Splunk Technology Adapter for Mcafee Web Gateway
-TA-mwg 1.9.6
-mwg Technology Adapter and supporting XML files
+TA-mwg
+Mcafee Web Gateway Technology Adapter
+provided by:
+Myron Davis
+State of Alaska
 
-This application is primarily supported via the following methods
-https://github.com/AlaskaSSO/TA-mwg
-https://answers.splunk.com/app/questions/3653.html
-
-This application is under the CC BY-SA 3.0 license
 
 CHANGELOG:
-Version 1.9.6
-re-released under license CC BY-SA 3.0
-
-Version 1.9.5
-added CIM compliance for mcafee alerts via the mcafee incident signalling service
-
-Version 1.9.4
-http_user_agent -> user_agent CIM for '-' -> 'unknown'
-
 Version 1.9.3
 First public release
 
 I have released several versions of these for inclusion into the very nice Mcafee Webgateway App written by Pavel Prostine <splunk@compek.net>, initially basing everything off of his very fine work.
+
+
 
 These are a set of MWG extractions that are CIM compliant.  The current release of these rules are more efficient/faster/better space savings than previous versions of the log format.  But you *MUST* install the latest XML files.
 
@@ -46,7 +35,7 @@ TA-mwg should be installed index side and if run through a syslog server on inde
 
 Please feel free to submit logs or things that don't work and I'll fix them.
 
-A total of *4* XML files need to be imported into various parts of MWG and 1 rule change.
+A total of *4* XML files need to be imported into various parts of MWG.
 
 TA-mwg-1.9.3-ErrorHandlerUpdateVersions.xml
 This file needs to be imported into the TOP of the ErrorHandler portion of MWG.
@@ -78,12 +67,6 @@ Name MWGaccess (press OK)
 then click on it and add Ruleset from Library
 choose TA-mwg-1.9.3-LogHandler.xml
 Then ADD
-
-On your "Block virus" rule do the following modification:
-Events ->
-ADD:
-Set User-Defined.Antimalware.MD5 = Body.Hash("md5")
-Set User-Defined.Antimalware.SHA1 = Body.HashSHA1
 
 
 -Myron
