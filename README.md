@@ -1,4 +1,4 @@
-# TA-httpry
+# TA-mwg
 Splunk Technology Adapter for Mcafee Web Gateway
 TA-mwg 1.9.6
 mwg Technology Adapter and supporting XML files
